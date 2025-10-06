@@ -1,0 +1,27 @@
+---
+services:
+  mineria-datos:
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    container_name: proyecto_mineria
+    restart: unless-stopped
+    security_opt: [no-new-privileges:true]
+    networks: [proxy]
+    environment:
+      TZ: America/Santo_Domingo
+      PYTHONUNBUFFERED: 1
+      MSSQL_HOST: ${MSSQL_HOST}
+      MSSQL_PORT: ${MSSQL_PORT:-1433}
+      MSSQL_DATABASE: ${MSSQL_DATABASE}
+      MSSQL_USER: ${MSSQL_USER}
+      MSSQL_PASSWORD: ${MSSQL_PASSWORD}
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src
+    working_dir: /app/src
+    command: sh -c "python proyecto_mineria.py && tail -f /dev/null"
+
+networks:
+  proxy:
+    external: true

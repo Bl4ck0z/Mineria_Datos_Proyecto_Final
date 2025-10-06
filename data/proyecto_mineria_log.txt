@@ -1,0 +1,76 @@
+PROYECTO MINERÍA DE DATOS - LOG DE EJECUCIÓN
+Fecha: 2025-10-06 09:29:55
+================================================================================
+
+Conectando a SQL Server...
+✓ Conexión exitosa
+
+Cargando archivo: 1.BASE DATOS.csv
+✓ Archivo cargado: 299,169 registros, 18 columnas
+
+
+================================================================================
+CAPA BRONZE - DATOS CRUDOS
+================================================================================
+✓ Bronze ya existe con 299,169 registros
+  Saltando creación de Bronze...
+
+================================================================================
+CAPA SILVER - LIMPIEZA Y TRANSFORMACIÓN
+================================================================================
+✓ Silver ya existe con 297,361 registros
+  Saltando creación de Silver...
+
+================================================================================
+CAPA GOLD - DATOS ANALÍTICOS LIMPIOS
+================================================================================
+✓ Gold ya existe con 289,511 registros
+  Saltando creación de Gold...
+
+================================================================================
+CAPA GOLD_ML - MACHINE LEARNING
+================================================================================
+✓ Gold_ML_Metricas ya existe con 8 registros
+  Saltando procesamiento ML...
+
+================================================================================
+CREANDO VISTAS ANALÍTICAS
+================================================================================
+   ✓ Vista_Ventas_Mes creada
+   ✓ Vista_Ventas_Categoria creada
+   ✓ Vista_Ventas_Sucursal creada
+   ✓ Vista_Top_Clientes creada
+   ✓ Vista_Ventas_Linea creada
+   ✓ Vista_Ventas_Vendedor creada
+   ✓ Vista_Ventas_Trimestre creada
+   ✓ Vista_Ventas_DiaSemana creada
+
+✓ Total: 8 vistas creadas exitosamente
+
+================================================================================
+RESUMEN FINAL
+================================================================================
+
+📊 TABLAS CREADAS:
+   • Bronze: 299,169 registros (datos crudos)
+   • Silver: 297,361 registros (limpieza + transformación)
+   • Gold: 289,511 registros (datos analíticos)
+   • Gold_ML_Metricas: 11 registros (resultados ML)
+
+📊 VISTAS CREADAS:
+   • Vista_Ventas_Mes (agregado mensual)
+   • Vista_Ventas_Categoria (por categoría)
+   • Vista_Ventas_Sucursal (por sucursal)
+   • Vista_Top_Clientes (ranking clientes)
+   • Vista_Ventas_Linea (por línea producto)
+   • Vista_Ventas_Vendedor (desempeño vendedores)
+   • Vista_Ventas_Trimestre (agregado trimestral)
+   • Vista_Ventas_DiaSemana (patrón semanal)
+
+📊 MÉTRICAS ML:
+   • K-Means Clustering: 0.9000 (Silhouette Score)
+   • Random Forest: 55.00% (Accuracy)
+   • Detalles guardados en: Gold_ML_Metricas
+
+✓ Pipeline completado exitosamente
+✓ Log guardado en: proyecto_mineria_log.txt
