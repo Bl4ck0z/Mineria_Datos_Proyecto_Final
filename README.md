@@ -139,4 +139,4 @@ El proceso genera `proyecto_mineria_log.txt` con:
 
 ## Autor
 
-Proyecto Final - Minería de Datos 3-2025
+Proyecto Final - Minería de Datos
